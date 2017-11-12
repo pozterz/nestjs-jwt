@@ -29,9 +29,8 @@ export class AuthService {
       if(await this.encrypt.compare(req.password, user.password)){
         return await this.createToken(req.username)
       }
-    } else {
-      return false
     }
+    return false
   }
 
   async validateUser(signed): Promise<boolean> {
